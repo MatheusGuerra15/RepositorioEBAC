@@ -40,7 +40,7 @@ int registro() {
     fprintf(file, "%s", cargo);
     fclose(file);
 
-    printf("Usu·rio cadastrado com sucesso!\n");
+    printf("Usu√°rio cadastrado com sucesso!\n");
     system("pause");
     return 0;
 }
@@ -56,9 +56,9 @@ int consulta() {
 
     FILE *file = fopen(cpf, "r");
     if (file == NULL) {
-        printf("N„o foi possÌvel localizar o arquivo.\n");
+        printf("N√£o foi poss√≠vel localizar o arquivo.\n");
     } else {
-        printf("\nEssas s„o as informaÁıes do usu·rio:\n");
+        printf("\nEssas s√£o as informa√ß√µes do usu√°rio:\n");
         while (fgets(conteudo, sizeof(conteudo), file) != NULL) {
             printf("%s\n", conteudo);
         }
@@ -76,9 +76,9 @@ int deletar() {
     scanf("%s", cpf);
 
     if (remove(cpf) == 0) {
-        printf("Usu·rio deletado com sucesso!\n");
+        printf("Usu√°rio deletado com sucesso!\n");
     } else {
-        printf("O usu·rio n„o se encontra no sistema!\n");
+        printf("O usu√°rio n√£o se encontra no sistema!\n");
     }
 
     system("pause");
@@ -92,13 +92,14 @@ int main() {
 
     while (1) {
         system("cls");
-        printf("### CartÛrio da EBAC ###\n\n");
-        printf("Escolha a opÁ„o desejada do menu:\n");
+        printf("### Cart√≥rio da EBAC ###\n\n");
+        printf("Escolha a op√ß√£o desejada do menu:\n");
         printf("\t1 - Registrar Nomes\n");
         printf("\t2 - Consultar Nomes\n");
         printf("\t3 - Deletar Nomes\n");
+        printf("\t0 - Sair\n\n");
         
-        printf("OpÁ„o: ");
+        printf("Op√ß√£o: ");
         scanf("%d", &opcao);
         system("cls");
 
@@ -112,9 +113,14 @@ int main() {
             case 3:
                 deletar();
                 break;
+             case 0:
+
+        printf("Encerrando o programa...\n");
+
+        return 0;
            
             default:
-                printf("Essa opÁ„o n„o est· disponÌvel!\n");
+                printf("Essa op√ß√£o n√£o est√° dispon√≠vel!\n");
                 system("pause");
                 break;
         }
