@@ -97,8 +97,7 @@ int main() {
         printf("\t1 - Registrar Nomes\n");
         printf("\t2 - Consultar Nomes\n");
         printf("\t3 - Deletar Nomes\n");
-        printf("\t0 - Sair\n\n");
-        
+       
         printf("Opção: ");
         scanf("%d", &opcao);
         system("cls");
@@ -113,11 +112,6 @@ int main() {
             case 3:
                 deletar();
                 break;
-             case 0:
-
-        printf("Encerrando o programa...\n");
-
-        return 0;
            
             default:
                 printf("Essa opção não está disponível!\n");
